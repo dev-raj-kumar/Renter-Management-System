@@ -1,0 +1,66 @@
+<%- include('header') -%>
+
+  <h1>Welcome <%= name %></h1>
+  <h3> No of tenants : <%= renter.length %></h3>
+  <form class="" action="renterAdd" method="post">
+     <button type="submit" name="button">add New renter</button>
+  </form>
+  <form class="" action="noticeAll" method="post">
+    <h3>Send Notice to all</h3>
+     <button type="submit" name="button"> Send </button>
+  </form>
+  <form class="" action="noticeDue" method="post">
+    <h3>Send notice to who had not paid rent of this month</h3>
+     <button type="submit" name="button"> Send </button>
+  </form>
+  <form class="" action="payHistory" method="post">
+     <button type="submit" name="button">View Payment History</button>
+  </form>
+
+  <h1>Renters left to Pay</h1>
+  <table>
+    <tr>
+      <th>Renter Name </th>
+      <th>Electricity Bill</th>
+      <th>Water Bill</th>
+      <th>Monthly Rent</th>
+      <th>Total Due</th>
+    </tr>
+    <% for(let i=0;i<renter.length;i++){ %>
+        <% if(renter[i].due > 0)%>
+           <% { %>
+
+             <tr>
+               <td> <%= renter[i].name %> </td>
+               <td> <%= renter[i].elecBill %> </td>
+               <td> <%= renter[i].waterBill %> </td>
+               <td> <%= renter[i].monthlyrent %> </td>
+               <td> <%= renter[i].due %> </td>
+             </tr>
+
+           <% } %>
+
+     <% } %>
+  </table>
+  <br><br>
+  <h1>List of all Renters</h1>
+  <% for(let i=0;i<renter.length;i++) {%>
+    <ol>
+      <li>
+        <table>
+          <tr>
+            <th> <%= renter[i].name %> </th>
+            <th> <%= renter[i].email %> </th>
+            <th>
+               <form class="" action="renterProfile" method="post">
+                  <input type="hidden" name="id" value="<%= renter[i]._id %>">
+                  <button type="submit" name="button">Profile</button>
+               </form>
+             </th>
+          </tr>
+        </table>
+      </li>
+    </ol>
+  <% } %>
+
+<%- include('footer') -%>

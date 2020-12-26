@@ -1,0 +1,12 @@
+<%- include("header")  -%>
+<h1><%= mssg %></h1>
+<form class="" action="usignup" method="post">
+  Name : <input type="text" name="name" value="" placeholder="MR. XYZ"><br>
+  UserName : <input type="text" name="uname" value="" placeholder="xyz (the username must be unique)">
+  Email : <input type="email" name="email" value="" placeholder="xyz@gmail.com"> <br>
+  Password : <input type="password" name="pass" value=""> <br>
+  Confirm Password : <input type="password" name="cpass" value=""> <br>
+  <button type="submit" name="button">Register</button>
+</form>
+
+<%- include("footer")  -%>

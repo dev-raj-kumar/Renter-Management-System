@@ -1,0 +1,12 @@
+<%- include('header') -%>
+<h1><%= mssg %></h1>
+<% if(messages.error) %>
+ <h1><%= messages.error %></h1>
+<form class="" action="ulogin" method="post">
+  Email : <input type="email" name="username" value="">
+  Password : <input type="password" name="password" value="">
+  <button type="submit" name="button">Login</button>
+</form>
+ <a href="forgotPass.ejs">Forgot Password</a>
+
+<%- include("footer")  -%>

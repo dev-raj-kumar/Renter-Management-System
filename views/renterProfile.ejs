@@ -1,0 +1,40 @@
+<%- include('header') -%>
+<h1>Name : <%= renter.name %></h1>
+<h3>Address : <%=renter.address %></h3>
+<h3>Parent Nmae : <%=renter.p_name %></h3>
+<h3>Email : <%=renter.email %></h3>
+<h3>Adhaar No  : <%=renter.adhaarno %></h3>
+<h3>Monthly Rent : <%=renter.monthlyrent %></h3>
+<h2> Due: <%=renter.due %></h2>
+<h3>Water meter Rate : <%=renter.rateelec %></h3>
+<h3>Electric meter Rate : <%=renter.ratewater %></h3>
+<h3>From : <%=renter.date %></h3>
+<br><br>
+<h1>Add Payment</h1>
+<form class="" action="addPay" method="post">
+   <input type="hidden" name="id" value="<%= renter._id %>">
+   Amount Paid : <input type="number" name="paid" value="" required> <br>
+   Electric meter Reading : <input type="number" name="emr" value="" required> <br>
+   Water meter Reading : <input type="number" name="wmr" value="" required> <br>
+   Miscellaneous amount spend : <input type="number" name="mamt" value="" required> <br>
+   <button type="submit" name="button">Save</button>
+</form>
+<br><br>
+<form class="" action="renterPayR" method="post">
+   <input type="hidden" name="id" value="<%= renter._id %>">
+   <button type="submit" name="button">View Payment record</button>
+</form>
+<form class="" action="renterEdit" method="post">
+   <input type="hidden" name="id" value="<%= renter._id %>">
+   <input type="hidden" name="email" value="<%= renter.email %>">
+   <input type="hidden" name="address" value="<%= renter.address %>">
+   <input type="hidden" name="monthlyrent" value="<%= renter.monthlyrent %>">
+   <input type="hidden" name="rateelec" value="<%= renter.rateelec %>">
+   <input type="hidden" name="ratewater" value="<%= renter.ratewater %>">
+   <button type="submit" name="button">Update Records</button>
+</form>
+<form class="" action="renterDelete" method="post">
+   <input type="hidden" name="id" value="<%= renter._id %>">
+   <button type="submit" name="button">Delete Renter</button>
+</form>
+<%- include('footer') -%>

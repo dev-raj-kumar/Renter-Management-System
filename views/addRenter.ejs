@@ -1,0 +1,20 @@
+<%- include("header") -%>
+<h1><%= mssg %></h1>
+  <form class="" action="addRenter" method="post">
+    Name : <input type="text" name="rname" value="" required> <br>
+    Address : <input type="text" name="add" value="address" required> <br>
+    Parent Name : <input type="text" name="pname" value="" required> <br>
+    Email : <input type="email" name="remail" value="" required> <br>
+    Adhaar No : <input type="number" name="radhaar" value="" required> <br>
+    Monthly Rent : <input type="number" name="rmrent" value="" step="0.01" min="0" required> <br>
+    Electricity Bill Rate per unit : RS <input type="number" name="relec" value="" step="0.01" min="0" required>  <br>
+    Initial Electric Meter Reading : <input type="number" name="initialelec" value="" step="0.01" min="0" required> <br>
+    Water Bill Rate per unit : RS <input type="number" name="rwater" value="" step="0.01" min="0" required> <br />
+    Initial Water Meter Reading : <input type="number" name="iwater" value="" step="0.01" min="0" required> <br>
+    Miscellnious Amount (spent by renter): <input type="number" name="misc" value="" step="0.01" min="0" required> <br>
+    Rent for this month(decided) : <input type="number" name="due" value="" step="0.01" min="0" required> <br>
+    any Amount paid by tenant : <input type="number" name="amt" value="" step="0.01" min="0" required> <br>
+    Note : <input type="text" name="note" value=""> <br>
+    <button type="submit" name="button">Add Renter</button>
+  </form>
+<%- include("footer") -%>

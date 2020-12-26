@@ -1,0 +1,20 @@
+<%- include('header') -%>
+  <h1>Name : <%= name %></h1>
+  <h3>Email : <%= email %></h1>
+  <br>
+  <h1>Payment record</h1>
+  <table>
+    <tr>
+      <th>Date</th>
+      <th>Amount</th>
+    </tr>
+    <% for(let i= payment.length -1;i>=0;i--){ %>
+       <% if(payment[i].amount != 0) { %>
+         <tr>
+           <td><%= payment[i].date %></td>
+           <td><%= payment[i].amount %></td>
+         </tr>
+      <% } %>
+  <%  }  %>
+  </table>
+<%- include('footer') -%>
